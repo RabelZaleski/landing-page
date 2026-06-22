@@ -1,0 +1,198 @@
+/* ==========================================
+   HEADER / HERO (DESKTOP)
+========================================== */
+header{
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+
+.bnr{
+    padding: 40px;
+    position: relative;
+
+    background:
+        linear-gradient(180deg, transparent 0%, #020617 100%),
+        url("gallery/b-anner.png");
+
+    background-size: cover;
+    background-position: center;
+
+    height: 650px;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+/* CONTEÚDO DO HERO */
+.hero-info{
+    position: relative;
+    margin: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    z-index: 10;
+    max-width: 600px;
+}
+
+.hero-info h1{
+    color: #fff;
+
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    padding: 20px 30px;
+    border-radius: 16px;
+
+    font-size: 48px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+
+    text-align: center;
+}
+
+h1 span{
+    color: var(--primary, #00b7ff);
+}
+
+/* ÍCONES */
+.bnr-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.icon-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.icon-item img{
+    width: 45px;
+    height: 45px;
+}
+
+/* BOTÃO */
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 300px;
+    padding: 14px 22px;
+
+    text-decoration: none;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.25);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: .3s;
+}
+
+.btn:hover{
+    background: rgba(255,255,255,.15);
+    transform: translateY(-2px);
+}
+
+.icon-circle{
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+}
+
+
+/* ==========================================
+   TABLET (até 1024px)
+========================================== */
+@media (max-width: 1024px){
+
+    .hero-info h1{
+        font-size: 38px;
+    }
+
+    .bnr-icons{
+        gap: 20px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE (até 768px)
+========================================== */
+@media (max-width: 768px){
+
+    .bnr{
+        height: auto;
+        min-height: 600px;
+
+        margin: 10px;
+        padding: 30px 20px;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-info{
+        margin: 0;
+        width: 100%;
+    }
+
+    .hero-info h1{
+        width: 100%;
+        font-size: 28px;
+        padding: 16px;
+        line-height: 1.2;
+    }
+
+    .bnr-icons{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .icon-item{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .icon-item img{
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn{
+        width: 100%;
+        max-width: 320px;
+    }
+}

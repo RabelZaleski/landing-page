@@ -1,0 +1,579 @@
+/* ===================================================
+   GALERIA
+=================================================== */
+#galeria{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+#galeria h1{
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#galeria p{
+    color: rgba(255,255,255,.8);
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#galeria img{
+    width: 290px;
+    height: 300px;
+
+    object-fit: cover;
+    border-radius: 15px;
+
+    flex-shrink: 0;
+    transition: .3s;
+}
+
+#galeria img:hover{
+    transform: scale(1.03);
+}
+
+/* PROCESSO */
+#processo{
+    margin-bottom: 80px;
+}
+
+.subtitulo{
+    color:#2f8cff;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+}
+
+#processo h1{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+#processo h1 span{
+    color:#2f8cff;
+}
+
+.processo{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    position:relative;
+}
+
+.processo::before{
+    content:"";
+    position:absolute;
+    top:35px;
+    left:12%;
+    right:12%;
+    height:1px;
+    background:rgba(255,255,255,.4);
+    z-index:0;
+}
+
+.etapa{
+    width:220px;
+    position:relative;
+    z-index:1;
+    text-align:center;
+}
+
+.etapa img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.etapa h3{
+    font-size:18px;
+    margin-bottom:10px;
+    color:white;
+}
+
+.etapa p{
+    font-size:14px;
+    line-height:1.6;
+    color:rgba(255,255,255,.8);
+}
+
+/* CONTATO */
+#contato{
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+#contato h3{
+    font-size:18px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.utility{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.utility li{
+    list-style:none;
+}
+
+.utility a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#cfd8e3;
+}
+
+.utility img{
+    width:24px;
+    height:24px;
+}
+
+.utility span{
+    color:#cfd8e3;
+    font-size:15px;
+}
+
+/* RODAPÉ */
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:20px;
+    text-align:center;
+}
+
+.footer-bottom p{
+    color:#cfd8e3;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* rodapé inferior */
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 13px;
+    color: #aab4c0;
+    text-decoration: none;
+}
+
+.utility  li{
+    
+    list-style: none;
+
+}
+    
+
+
+.utility  {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.utility li img{
+    width: 40px;
+    height: 40px;
+}
+
+.utility a:hover {
+    color: #5ab8ef;
+}
+
+
+
+
+/* SECTION PRINCIPAL */
+#conteudo-completo{
+    width: calc(100% - 40px);
+    margin: 20px;
+    padding: 60px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg,#02162f 0%,#04264d 50%,#02162f 100%);
+    color: #fff;
+
+    border: 1px solid rgba(47,140,255,.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+/* GALERIA */
+#galeria{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none; /* Firefox */
+}
+
+#galeria::-webkit-scrollbar{
+    display: none; /* Chrome, Edge e Safari */
+}
+
+/* Botões */
+.galeria-container{
+    position: relative;
+}
+
+.seta{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.6);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.seta:hover{
+    background: #2f8cff;
+}
+
+.seta-esquerda{
+    left: -20px;
+}
+
+.seta-direita{
+    right: -20px;
+}
+
+
+/* PROCESSO */
+#processo{
+    margin-bottom: 80px;
+}
+
+.subtitulo{
+    color:#2f8cff;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+}
+
+#processo h1{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+#processo h1 span{
+    color:#2f8cff;
+}
+
+.processo{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    position:relative;
+}
+
+.processo::before{
+    content:"";
+    position:absolute;
+    top:35px;
+    left:12%;
+    right:12%;
+    height:1px;
+    background:rgba(255,255,255,.4);
+    z-index:0;
+}
+
+.etapa{
+    width:220px;
+    position:relative;
+    z-index:1;
+    text-align:center;
+}
+
+.etapa img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.etapa h3{
+    font-size:18px;
+    margin-bottom:10px;
+    color:white;
+}
+
+.etapa p{
+    font-size:14px;
+    line-height:1.6;
+    color:rgba(255,255,255,.8);
+}
+
+/* CONTATO */
+#contato{
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+#contato h3{
+    font-size:18px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.utility{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.utility li{
+    list-style:none;
+}
+
+.utility a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#cfd8e3;
+}
+
+.utility img{
+    width:24px;
+    height:24px;
+}
+
+.utility span{
+    color:#cfd8e3;
+    font-size:15px;
+}
+
+/* RODAPÉ */
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:20px;
+    text-align:center;
+}
+
+.footer-bottom p{
+    color:#cfd8e3;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* SECTION PRINCIPAL */
+#conteudo-completo{
+    width: calc(100% - 40px);
+    margin: 20px;
+    padding: 60px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg,#02162f 0%,#04264d 50%,#02162f 100%);
+    color: #fff;
+
+    border: 1px solid rgba(47,140,255,.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+//* ======================================
+   RESPONSIVIDADE COMPLETA
+====================================== */
+
+@media (max-width: 1024px){
+
+    #conteudo-completo{
+        padding: 40px 30px;
+    }
+
+    .processo{
+        gap: 20px;
+    }
+
+    .etapa{
+        width: 180px;
+    }
+
+}
+
+/* TABLETS */
+
+@media (max-width: 768px){
+
+    #conteudo-completo{
+        width: calc(100% - 20px);
+        margin: 10px;
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    /* GALERIA */
+
+    #galeria{
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    #galeria img{
+        width: 240px;
+        height: 260px;
+    }
+
+    .seta{
+        display: none;
+    }
+
+    /* PROCESSO */
+
+    #processo h1{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .subtitulo{
+        text-align: center;
+    }
+
+    .processo{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .processo::before{
+        display: none;
+    }
+
+    .etapa{
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* CONTATO */
+
+    #contato{
+        text-align: center;
+    }
+
+    .utility{
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 480px){
+
+    #conteudo-completo{
+        width: calc(100% - 10px);
+        margin: 5px;
+        padding: 25px 15px;
+        border-radius: 12px;
+    }
+
+    /* GALERIA */
+
+    #galeria img{
+        width: 85vw;
+        height: 250px;
+    }
+
+    /* TÍTULOS */
+
+    #galeria h1,
+    #processo h1{
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    #galeria p{
+        font-size: .95rem;
+    }
+
+    /* ETAPAS */
+
+    .etapa{
+        max-width: 100%;
+    }
+
+    .etapa img{
+        width: 55px;
+        height: 55px;
+    }
+
+    .etapa h3{
+        font-size: 16px;
+    }
+
+    .etapa p{
+        font-size: 13px;
+    }
+
+    /* CONTATOS */
+
+    .utility a{
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .utility li img{
+        width: 32px;
+        height: 32px;
+    }
+
+    /* RODAPÉ */
+
+    .footer-bottom p{
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+}
+
+/* TELAS MUITO PEQUENAS */
+
+@media (max-width: 360px){
+
+    #galeria img{
+        width: 92vw;
+        height: 220px;
+    }
+
+    #galeria h1,
+    #processo h1{
+        font-size: 1.5rem;
+    }
+
+}

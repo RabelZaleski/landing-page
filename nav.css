@@ -1,0 +1,248 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   MENU PREMIUM GLASS LUXURY (DESKTOP)
+========================================== */
+#menu{
+    width: calc(100% - 40px);
+    max-width: 1400px;
+
+    position: absolute;
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    border-radius: 22px;
+
+    background: rgba(6, 10, 20, .22);
+
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(255,255,255,.03);
+
+    overflow: hidden;
+}
+/* REFLEXO DO VIDRO */
+#menu::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.12) 0%,
+        rgba(255,255,255,.02) 30%,
+        transparent 60%
+    );
+
+    pointer-events: none;
+}
+/* LINKS */
+#links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 90px;
+
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 2;
+}
+
+#links a{
+    text-decoration: none;
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    padding: 12px 18px;
+
+    border-radius: 999px;
+
+    transition: .35s ease;
+
+    position: relative;
+}
+/* HOVER */
+#links a:hover{
+    color: #fff;
+
+    background: rgba(255,255,255,.06);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 25px rgba(120,160,255,.15);
+
+    transform: translateY(-2px);
+}
+
+#links a.active{
+    background: rgba(255,255,255,.08);
+
+    color: #fff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 0 30px rgba(120,160,255,.15);
+}
+/* UNDERLINE PREMIUM */
+#links a::after{
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(120,160,255,.95),
+        transparent
+    );
+
+    transform: translateX(-50%);
+    transition: width .35s ease;
+}
+
+#links a:hover::after{
+    width: 80%;
+}
+
+/* ACTIVE */
+#links a.active{
+    color: #fff;
+
+    background: rgba(120,160,255,.12);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 0 25px rgba(120,160,255,.10);
+}
+
+#links a.active::after{
+    width: 80%;
+}
+
+.conteudo  {
+    font-family: ;
+
+}
+/* ==========================================
+   TABLET (até 1024px)
+========================================== */
+@media (max-width: 1024px){
+
+    #menu{
+        width: calc(100% - 24px);
+        top: 12px;
+
+        padding: 16px 20px;
+        border-radius: 20px;
+    }
+
+    #links{
+        gap: 25px; /* reduzido e consistente */
+    }
+
+    #links a{
+        font-size: .9rem;
+        letter-spacing: 1px;
+        padding: 10px 14px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE (até 768px)
+========================================== */
+@media (max-width: 768px){
+
+    #menu{
+        width: calc(100% - 16px);
+        top: 8px;
+
+        padding: 10px 12px;
+        border-radius: 16px;
+
+        backdrop-filter: blur(18px) saturate(170%);
+        -webkit-backdrop-filter: blur(18px) saturate(170%);
+    }
+
+    #links{
+        gap: 6px;              /* mais compacto */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #links a{
+        font-size: .75rem;
+        padding: 8px 10px;
+        letter-spacing: .5px;
+
+        border-radius: 999px;
+    }
+
+    /* opcional: desliga hover pesado no mobile */
+    #links a:hover{
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+/* ==========================================
+   CELULAR PEQUENO (até 480px)
+========================================== */
+@media (max-width: 480px){
+
+    #menu{
+        width: calc(100% - 12px);
+        padding: 10px;
+    }
+
+    #links{
+        gap: 5px;
+    }
+
+    #links a{
+        font-size: .7rem;
+        padding: 6px 8px;
+        letter-spacing: 0;
+    }
+}
