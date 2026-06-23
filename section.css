@@ -296,14 +296,22 @@ body{
 /* =========================
    MOBILE
 ========================= */
+/* MOBILE */
 @media (max-width: 600px){
-    #sobre .vantagens{
+    #sobre{
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 25px;
     }
 
-    #sobre .vantagens h3{
-        padding: 18px;
-        font-size: 15px;
+    #sobre .conteudo{
+        padding-left: 0;
+        border-left: none;
+    }
+
+    #sobre .imagem img{
+        height: auto;          /* <- aqui resolve o problema */
+        max-height: 260px;     /* controla o tamanho no mobile */
+        width: 100%;
+        object-fit: cover;
     }
 }

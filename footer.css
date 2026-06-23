@@ -577,3 +577,12 @@
     }
 
 }
+
+.creditos {
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+.creditos span {
+    font-weight: 500;
+}
