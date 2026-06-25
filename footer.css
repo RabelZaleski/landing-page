@@ -1,108 +1,353 @@
 /* ===================================================
-   GALERIA
+   GALERIA BASE
 =================================================== */
+
+.galeria-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* animação */
+.galeria-track{
+    display: flex;
+    width: max-content;
+    animation: scrollGaleria 25s linear infinite;
+}
+
+/* linha */
 #galeria{
     display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    margin: 0 auto;
-    margin-bottom: 80px;
+    gap: 14px;
 }
 
-#galeria h1{
-    color: #fff;
-    text-align: center;
-    font-size: 2.5rem;
-}
-
-#galeria p{
-    color: rgba(255,255,255,.8);
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
+/* ===================================================
+   IMAGENS (DESKTOP BASE)
+=================================================== */
 
 #galeria img{
     width: 290px;
     height: 300px;
 
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 18px;
+    flex: 0 0 auto;
 
-    flex-shrink: 0;
-    transition: .3s;
+    transition: transform .35s ease, box-shadow .35s ease;
+    position: relative;
 }
 
+/* hover premium */
 #galeria img:hover{
-    transform: scale(1.03);
+    transform: scale(1.08);
+    z-index: 5;
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+}
+
+/* ===================================================
+   ANIMAÇÃO
+=================================================== */
+
+@keyframes scrollGaleria{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+/* ===================================================
+   TABLET (até 1024px)
+=================================================== */
+
+@media (max-width: 1024px){
+
+    #galeria img{
+        width: 240px;
+        height: 250px;
+    }
+
+    .galeria-track{
+        animation-duration: 30s; /* mais suave no tablet */
+    }
+}
+
+/* ===================================================
+   MOBILE GRANDE (até 768px)
+=================================================== */
+
+@media (max-width: 768px){
+
+    #galeria img{
+        width: 200px;
+        height: 220px;
+    }
+
+    .galeria-track{
+        animation-duration: 35s;
+    }
+
+    /* hover reduzido (mobile não precisa exagero) */
+    #galeria img:hover{
+        transform: scale(1.05);
+    }
+}
+
+/* ===================================================
+   MOBILE PEQUENO (até 480px)
+=================================================== */
+
+@media (max-width: 480px){
+
+    #galeria img{
+        width: 78vw;
+        height: 210px;
+    }
+
+    .galeria-track{
+        animation-duration: 40s;
+    }
+
+    #galeria{
+        gap: 10px;
+    }
+}
+
+/* ===================================================
+   MOBILE MUITO PEQUENO (até 360px)
+=================================================== */
+
+@media (max-width: 360px){
+
+    #galeria img{
+        width: 85vw;
+        height: 190px;
+    }
+
+    .galeria-track{
+        animation-duration: 45s;
+    }
 }
 
 /* PROCESSO */
+/* ===================================================
+   PROCESSO
+=================================================== */
+
+/* ===================================================
+   PROCESSO
+=================================================== */
+
 #processo{
     margin-bottom: 80px;
+    text-align: center;
 }
 
 .subtitulo{
-    color:#2f8cff;
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
-    display:block;
-    margin-bottom:10px;
+    color: #2f8cff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
 }
 
 #processo h1{
-    font-size:42px;
-    margin-bottom:50px;
+    font-size: 42px;
+    margin-bottom: 50px;
 }
 
 #processo h1 span{
-    color:#2f8cff;
+    color: #2f8cff;
+}
+
+/* CONTAINER DAS ETAPAS */
+.processo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+
+    position: relative;
+}
+
+/* LINHA DECORATIVA */
+.processo::before{
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: rgba(255,255,255,.25);
+    z-index: 0;
+}
+
+/* ETAPA */
+.etapa{
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* IMAGEM */
+.etapa img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+
+    margin-bottom: 20px;
+}
+
+/* TÍTULO */
+.etapa h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* TEXTO */
+.etapa p{
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.8);
+}
+/* ======================================
+   PROCESSO
+====================================== */
+
+#processo{
+    text-align: center;
+    margin: 80px 0;
 }
 
 .processo{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    position:relative;
-}
+    display: flex !important;
+    flex-direction: row !important;
 
-.processo::before{
-    content:"";
-    position:absolute;
-    top:35px;
-    left:12%;
-    right:12%;
-    height:1px;
-    background:rgba(255,255,255,.4);
-    z-index:0;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    gap: 50px !important;
+
+    flex-wrap: nowrap !important;
 }
 
 .etapa{
-    width:220px;
-    position:relative;
-    z-index:1;
-    text-align:center;
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
 }
 
 .etapa img{
-    width:70px;
-    height:70px;
-    object-fit:contain;
-    margin-bottom:20px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
-.etapa h3{
-    font-size:18px;
-    margin-bottom:10px;
-    color:white;
+/* ===================================================
+   RESPONSIVIDADE PROCESSO
+=================================================== */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .processo{
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 30px !important;
+    }
+
+    .etapa{
+        width: calc(50% - 20px);
+        max-width: 260px;
+    }
+
+    .processo::before{
+        display: none;
+    }
+
+    #processo h1{
+        font-size: 36px;
+    }
 }
 
-.etapa p{
-    font-size:14px;
-    line-height:1.6;
-    color:rgba(255,255,255,.8);
+/* MOBILE */
+@media (max-width: 768px){
+
+    .processo{
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 35px !important;
+    }
+
+    .etapa{
+        width: 100%;
+        max-width: 320px;
+    }
+
+    #processo h1{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .etapa img{
+        width: 60px;
+        height: 60px;
+    }
+
+    .etapa h3{
+        font-size: 17px;
+    }
+
+    .etapa p{
+        font-size: 14px;
+    }
 }
+
+/* MOBILE PEQUENO */
+@media (max-width: 480px){
+
+    #processo{
+        margin: 50px 0;
+    }
+
+    #processo h1{
+        font-size: 26px;
+    }
+
+    .subtitulo{
+        font-size: 11px;
+    }
+
+    .etapa{
+        max-width: 280px;
+    }
+
+    .etapa img{
+        width: 55px;
+        height: 55px;
+    }
+
+    .etapa p{
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
 
 /* CONTATO */
 #contato{
@@ -391,9 +636,11 @@
 
 /* SECTION PRINCIPAL */
 #conteudo-completo{
+
     width: calc(100% - 40px);
     margin: 20px;
     padding: 60px;
+
 
     border-radius: 20px;
 
@@ -403,8 +650,185 @@
     border: 1px solid rgba(47,140,255,.15);
     box-shadow: 0 20px 50px rgba(0,0,0,.35);
 }
+li {
+    list-style: none;
+}
 
-//* ======================================
+
+/*=================================================================
+ 
+                    BOTÃO INSTAGRAM
+
+ ================================================================ */
+
+.utility li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 14px;
+}
+
+li a[href*="instagram"] {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 0 6px;
+
+    border-radius: 22px;
+
+    /* AZUL GLASS PREMIUM */
+    background: linear-gradient(
+        145deg,
+        rgba(30, 90, 160, 0.55),
+        rgba(10, 40, 90, 0.75)
+    );
+
+    /* contorno azul neon suave */
+    border: 1px solid rgba(120, 190, 255, 0.35);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.25),
+        inset 0 -2px 10px rgba(0,0,0,.25),
+        0 14px 35px rgba(30, 90, 160, 0.25);
+
+    position: relative;
+    overflow: hidden;
+
+    text-decoration: none;
+
+    transition: all .3s ease;
+}
+
+/* brilho premium (glass sweep) */
+li a[href*="instagram"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -160%;
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    transition: .7s;
+}
+
+li a[href*="instagram"]:hover::before {
+    left: 180%;
+}
+
+li a[href*="instagram"]:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 18px 45px rgba(30, 90, 160, 0.35);
+}
+
+/* ícone */
+li a[href*="instagram"] img {
+    width: 28px;
+    height: 28px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* texto */
+li a[href*="instagram"] span {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* outline mais limpo tipo “UI tech” */
+li a[href*="instagram"] {
+    outline: 1px solid rgba(120, 190, 255, 0.15);
+    outline-offset: 4px;
+}
+ 
+/*==========================================================================================================
+
+                    BOTÃO WHATSAPP 
+============================================================================================================*/
+#whats-contato {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    /* fundo mais leve */
+    background: rgba(37, 211, 102, 0.12);
+
+    /* CONTORNO DO WHATS */
+    border: 2px solid #25D366;
+
+    /* glow suave do WhatsApp */
+    box-shadow:
+        0 0 0 4px rgba(37, 211, 102, 0.12),
+        0 10px 25px rgba(37, 211, 102, 0.18);
+
+    position: relative;
+    transition: all .25s ease;
+
+    text-decoration: none;
+}
+
+/* hover com reforço no glow */
+#whats-contato:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 0 6px rgba(37, 211, 102, 0.18),
+        0 12px 30px rgba(37, 211, 102, 0.25);
+}
+
+/* ícone */
+#whats-contato img {
+    width: 30px;
+    height: 30px;
+
+    
+}
+#whats-contato img {
+    width: 30px;
+    height: 30px;
+
+    filter: invert(58%) sepia(94%) saturate(400%) hue-rotate(85deg) brightness(95%);
+}
+/* alinhamento do li (opcional mas recomendado) */
+li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.utility li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nums {
+    display: flex;
+    flex-direction: column; /* aqui fica um embaixo do outro */
+}
+/* ======================================
    RESPONSIVIDADE COMPLETA
 ====================================== */
 
@@ -424,16 +848,30 @@
 
 }
 
-/* TABLETS */
-
-@media (max-width: 768px){
+/* ======================================================================
+                        TABLETS
+========================================================================= */
+@media (max-width: 1024px){
 
     #conteudo-completo{
-        width: calc(100% - 20px);
-        margin: 10px;
-        padding: 30px 20px;
-        border-radius: 15px;
+        padding: 40px 30px;
     }
+
+    #galeria img{
+        width: 260px;
+        height: 280px;
+    }
+
+    .processo{
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .etapa{
+        width: 200px;
+    }
+}
 
     /* GALERIA */
 
@@ -489,44 +927,34 @@
         align-items: center;
     }
 
-}
-
-/* CELULARES */
 
 @media (max-width: 480px){
 
     #conteudo-completo{
         width: calc(100% - 10px);
         margin: 5px;
-        padding: 25px 15px;
+        padding: 20px 15px;
         border-radius: 12px;
     }
 
-    /* GALERIA */
-
+    /* GALERIA full screen */
     #galeria img{
         width: 85vw;
-        height: 250px;
+        height: 240px;
     }
 
-    /* TÍTULOS */
-
+    /* TIPOGRAFIA */
     #galeria h1,
     #processo h1{
-        font-size: 1.8rem;
-        line-height: 1.2;
+        font-size: 1.6rem;
+        text-align: center;
     }
 
     #galeria p{
-        font-size: .95rem;
+        font-size: 0.95rem;
     }
 
     /* ETAPAS */
-
-    .etapa{
-        max-width: 100%;
-    }
-
     .etapa img{
         width: 55px;
         height: 55px;
@@ -540,12 +968,11 @@
         font-size: 13px;
     }
 
-    /* CONTATOS */
-
+    /* CONTATO MAIS LIMPO */
     .utility a{
         flex-direction: column;
         text-align: center;
-        gap: 5px;
+        gap: 6px;
     }
 
     .utility li img{
@@ -554,35 +981,40 @@
     }
 
     /* RODAPÉ */
-
     .footer-bottom p{
         font-size: 12px;
         padding: 0 10px;
     }
-
 }
-
-/* TELAS MUITO PEQUENAS */
+/*====================================================================================
+            📱 MOBILE (até 480px)
+======================================================================================*/
 
 @media (max-width: 360px){
 
     #galeria img{
         width: 92vw;
-        height: 220px;
+        height: 210px;
     }
 
     #galeria h1,
     #processo h1{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+/*==============================================================================
+                MOBILE PEQUENO (até 360px)
+===============================================================================*/
+@media (max-width: 360px){
+
+    #galeria img{
+        width: 92vw;
+        height: 210px;
     }
 
-}
-
-.creditos {
-    font-size: 0.9rem;
-    opacity: 0.75;
-}
-
-.creditos span {
-    font-weight: 500;
+    #galeria h1,
+    #processo h1{
+        font-size: 1.4rem;
+    }
 }

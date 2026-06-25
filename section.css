@@ -1,9 +1,10 @@
 body{
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* =========================
-   SERVIÇOS
+   CONTAINER PRINCIPAL
 ========================= */
 
 .container{
@@ -17,6 +18,10 @@ body{
     align-items: center;
 }
 
+/* =========================
+   TEXTOS SERVIÇOS
+========================= */
+
 .servicos-texto h3{
     color: var(--primary);
     font-size: .9rem;
@@ -24,61 +29,68 @@ body{
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 18px;
+    position: relative;
 }
 
 .servicos-texto h3::after{
     content: "";
-    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
     width: 60px;
     height: 3px;
     background: var(--primary);
-    margin-top: 10px;
     border-radius: 999px;
 }
 
 .servicos-texto h2{
-    font-size: clamp(3rem, 5vw, 4.8rem);
-    font-weight: 700;
-    line-height: 1;
-    color: #0f172a;
-    margin-bottom: 30px;
-}
-
-.servicos-texto h2 span{
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
     color: var(--primary);
+    margin-bottom: 25px;
 }
 
 .servicos-texto p{
-    max-width: 42ch;
-    color: #6b7280;
-    font-size: 1.1rem;
-    line-height: 1.9;
+    color: var(--gray);
+    font-weight: 500;
 }
 
-/* CARDS */
+/* =========================
+   CARDS SERVIÇOS (MELHORADO)
+========================= */
+
+
 #itens{
     display: grid;
+
     grid-template-columns: repeat(5, 1fr);
     gap: 18px;
+
+    align-items: stretch;
 }
 
 .card-servico{
     background: #fff;
     border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 30px 18px;
+    border-radius: 18px;
+
+    padding: 28px 18px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
-    transition: .3s;
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,.03);
 }
 
 .card-servico:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.08),
+        0 0 0 1px rgba(45,125,255,.08);
 }
 
 /* =========================
@@ -88,7 +100,6 @@ body{
 .orcamento-banner{
     width: calc(100% - 40px);
     margin: 0 auto;
-
     padding: 25px 40px;
 
     display: flex;
@@ -96,50 +107,183 @@ body{
     gap: 25px;
 
     border-radius: var(--container-radius);
+
     color: var(--white);
 
-    background: linear-gradient(135deg,
+    background: linear-gradient(
+        135deg,
         var(--primary),
         var(--primary-dark),
         var(--primary-darker)
     );
 
     box-shadow: 0 20px 50px rgba(0,0,0,.15);
+
+    flex-wrap: wrap;
 }
 
 .orcamento-icon{
     width: 70px;
     height: 70px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     border-radius: 50%;
+
     background: rgba(255,255,255,.12);
 }
 
 .orcamento-conteudo{
     flex: 1;
+    min-width: 220px;
 }
 
+/* BOTÃO ORÇAMENTO */
 .orcamento-btn{
-    padding: 14px 28px;
-    border-radius: 12px;
+    width: 204px;
+    height: 78px;
 
-    text-decoration: none;
-    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    font-size: .85rem;
-    font-weight: 700;
+    border-radius: 22px;
 
-    border: 1px solid rgba(255,255,255,.25);
-    background: rgba(255,255,255,.08);
+    background: linear-gradient(
+        145deg,
+        rgba(30, 90, 160, 0.28),
+        rgba(10, 60, 120, 0.18)
+    );
 
-    transition: .3s;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.14);
+    border-top: 1px solid rgba(255,255,255,.22);
+    border-left: 1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.28),
+        inset 0 1px 1px rgba(255,255,255,.25),
+        inset 0 -2px 10px rgba(0,0,0,.18);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all .35s ease;
+    outline: none;
+}
+
+.orcamento-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -140%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: .9s ease;
+}
+
+.orcamento-btn:hover::before{
+    left: 160%;
+}
+
+.orcamento-btn:hover{
+    transform: translateY(-2px) scale(1.04);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 0 1px rgba(120,190,255,.18),
+        0 0 22px rgba(80,150,255,.18);
+}
+
+.orcamento-btn img{
+    width: 42px;
+    height: 42px;
+
+    filter: brightness(0) invert(1);
+
+    position: relative;
+    z-index: 2;
 }
 
 /* =========================
-   SOBRE (corrigido duplicação)
+   SOBRE
 ========================= */
+
+.conteudo{
+    max-width: 600px;
+}
+
+.conteudo span{
+    display: inline-block;
+
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--primary);
+
+    margin-bottom: 18px;
+
+    position: relative;
+}
+
+.conteudo span::after{
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 60px;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        rgba(47,140,255,.2)
+    );
+
+    border-radius: 999px;
+}
+
+.conteudo h2{
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+
+    color: #031d42;
+
+    margin: 20px 0 15px;
+}
+
+.conteudo h2 strong{
+    color: var(--primary);
+}
+
+.conteudo p{
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--gray);
+    font-weight: 500;
+
+    max-width: 520px;
+}
 
 #sobre{
     max-width: 1200px;
@@ -155,8 +299,12 @@ body{
 #sobre .imagem img{
     width: 100%;
     height: 350px;
+
     object-fit: cover;
+
     border-radius: 20px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.1);
 }
 
 #sobre .conteudo{
@@ -164,154 +312,139 @@ body{
     border-left: 5px solid #0e63c7;
 }
 
-#sobre .conteudo h2{
-    font-size: 3rem;
-    color: #031d42;
-    margin: 15px 0;
-    line-height: 1.2;
-}
+/* =========================
+   VANTAGENS
+========================= */
+
 #sobre .vantagens{
     grid-column: 1 / -1;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 25px;
 
-    /* efeito vidro */
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
 
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
 
-    border-radius: 18px;
+    background: rgba(255,255,255,.55);
 
-    padding: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
+    border: 1px solid rgba(255,255,255,.2);
 
-#sobre .vantagens h3{
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-
-    padding: 20px;
-    text-align: center;
-
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
-
-#sobre .vantagens h3:hover{
-    transform: translateY(-3px);
-    transition: 0.25s ease;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.3);
 }
 
 #sobre .vantagens::before{
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 18px;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.25),
+
+    background: radial-gradient(
+        circle at top left,
+        rgba(255,255,255,.25),
         transparent 60%
     );
+
     pointer-events: none;
 }
 
-#sobre .vantagens{
-    position: relative;
-    overflow: hidden;
-}
+#sobre .vantagens .item{
+    padding: 22px;
 
-.conteudo p{
-       color:var(--gray);
+    border-radius: 16px;
 
-}
-
-.conteudo span{
-   font-family: var(--font-text);
-
-}
-
-.vantagens h3{
-    color: var(--font-text);
-}
-
-
-/* =========================
-   DESKTOP (base)
-========================= */
-#sobre .vantagens{
-    grid-column: 1 / -1;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-
-    margin-top: 20px;
-}
-
-#sobre .vantagens h3{
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-
-    padding: 20px;
     text-align: center;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background: rgba(255,255,255,.7);
 
-    transition: 0.25s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    transition: .3s ease;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
-#sobre .vantagens h3:hover{
-    transform: translateY(-3px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+#sobre .vantagens .item:hover{
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(255,255,255,.6);
 }
 
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
 
 /* =========================
-   TABLET
+   TABLET / NOTEBOOK
+   (até 1024px)
+   - Empilha o layout principal
+   - Ajusta grid para 1 coluna
 ========================= */
-@media (max-width: 992px){
-    #sobre .vantagens{
-        grid-template-columns: repeat(2, 1fr);
+
+@media (max-width: 1024px){
+
+    .container{
+        grid-template-columns: 1fr;
     }
-}
 
-
-/* =========================
-   MOBILE
-========================= */
-/* MOBILE */
-@media (max-width: 600px){
     #sobre{
         grid-template-columns: 1fr;
-        gap: 25px;
     }
 
     #sobre .conteudo{
         padding-left: 0;
         border-left: none;
     }
+}
+
+/* =========================
+   MOBILE (INTERMEDIÁRIO)
+   (até 768px)
+   - Ajusta banner de orçamento
+   - Centraliza conteúdo
+========================= */
+
+@media (max-width: 768px){
+
+    .orcamento-banner{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .orcamento-btn{
+        width: 100%;
+        max-width: 260px;
+        height: 70px;
+    }
+}
+
+/* =========================
+   MOBILE PEQUENO
+   (até 480px)
+   - Reduz altura de imagens
+   - Ajusta títulos para telas pequenas
+========================= */
+
+@media (max-width: 480px){
 
     #sobre .imagem img{
-        height: auto;          /* <- aqui resolve o problema */
-        max-height: 260px;     /* controla o tamanho no mobile */
-        width: 100%;
-        object-fit: cover;
+        height: 240px;
+    }
+
+    .conteudo h2{
+        font-size: 1.8rem;
     }
 }

@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link rel="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
    
@@ -46,21 +46,20 @@
 
                 <div class="icon-item">
                     <img src="icons/feather.png" alt="Pena">
-                    <span>Flexibilidade e durabilidade</span>
+                    <span> Flexibilidade e durabilidade</span>
                 </div>
 
                 <div class="icon-item">
                     <img src="icons/gota.svg" alt="Gota">
                     <span>Resistência à corrosão</span>
                 </div>
-            </div>
+                </div>
+           <div class="botao-whats">
+    <a href="https://wa.me/5554984273924?text=Ol%C3%A1,%20tenho%20interesse%20em%20mais%20informa%C3%A7%C3%B5es%20em%20solu%C3%A7%C3%B5es%20personalizadas%20em%20fibra%20de%20vidro">
+        <i class="fab fa-whatsapp"></i>
+        
+    </a>
 
-            <a href="https://wa.me/5554984273924?text=Ol%C3%A1,%20tenho%20interesse%20em%20mais%20informa%C3%A7%C3%B5es%20em%20solu%C3%A7%C3%B5es%20personalizadas%20em%20fibra%20de%20vidro" class="btn">
-                ORÇAMENTO
-                <span class="icon-circle">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </span>
-            </a>
         </div>
     </div>
 </header>
@@ -111,11 +110,10 @@
 
 
 
-<!--SECTION 04--SOBRE -->
+<!--SECTION 02--SOBRE -->
 <section >
     <div id="bordas">
 
-    <!----- SECTION 02---->
 <div class="orcamento-banner">
     <div class="orcamento-icon">
         <img src="assets/investimento.png">
@@ -127,7 +125,7 @@
     </div>
 
     <a href="https://w.app/solucoesfibradevidro" class="orcamento-btn">
-        PEDIR ORÇAMENTO
+        <img src="icons/whatsapp.svg" alt="contat">
     </a>
 
 </section>
@@ -139,17 +137,28 @@
     </div>
 
     <div class="conteudo">
-        <span>POR QUE ESCOLHER A FIBRA SOLUÇÕES?</span>
-        <h2>Qualidade que gera <strong>confiança</strong></h2>
-        <p>Trabalhamos com os melhores materiais e profissionais especializados.</p>
+    <span>POR QUE ESCOLHER A FIBRA SOLUÇÕES?</span>
+    <h2>Qualidade que gera <strong>confiança</strong></h2>
+    <p>Trabalhamos com os melhores materiais e profissionais especializados.</p>
+</div>
+
+   <div class="vantagens">
+    <div class="item">
+        <h3>Material de Alta Qualidade</h3>
     </div>
 
-    <div class="vantagens">
-        <div class="item"><h3>Material de Alta Qualidade</h3></div>
-        <div class="item"><h3>Acabamento Superior</h3></div>
-        <div class="item"><h3>Equipe Especializada</h3></div>
-        <div class="item"><h3>Entrega e Instalação</h3></div>
+    <div class="item">
+        <h3>Acabamento Superior</h3>
     </div>
+
+    <div class="item">
+        <h3>Equipe Especializada</h3>
+    </div>
+
+    <div class="item">
+        <h3>Entrega e Instalação</h3>
+    </div>
+</div>
     </div>
 </div>
 </section>
@@ -158,22 +167,34 @@
     <!-- GALERIA -->
    <div class="galeria-container">
 
-    <button class="seta seta-esquerda" onclick="scrollGaleria(-320)">
-        ❮
-    </button>
+    <div class="galeria-track">
+        <div id="galeria">
+          <img src="gallery/degraus.jpeg" alt="projeto03">
+             <img src="gallery/projeto1.jpeg" alt="projeto01">
+             <img src="gallery/industrial.jpeg" alt="projeto06">
+           <img src="gallery/cogumelos.jpeg" alt="projeto02">
+          
+            <img src="gallery/bota.jpeg" alt="projeto04">
+          
+            <img src="gallery/projeto1.jpeg" alt="projeto01">
+            <img src="gallery/jardim.jpeg" alt="projeto02">
+             <img src="gallery/piscinalonga.jpeg" alt=" projeto03">
+        </div>
 
-    <div id="galeria">
-        <img src="gallery/cogumelos.jpeg" alt="">
-        <img src="gallery/degraus.jpeg" alt="">
-        <img src="gallery/bota.jpeg" alt="">
-        <img src="gallery/pisci.jpeg" alt="">
-        <img src="gallery/projeto5.jpeg" alt="">
-        <img src="gallery/jardim.jpeg" alt="">
+        <!-- duplicado para loop infinito -->
+        <div id="galeria">
+              <img src="gallery/degraus.jpeg" alt="projeto03">
+             <img src="gallery/projeto1.jpeg" alt="projeto01">
+             <img src="gallery/industrial.jpeg" alt="projeto06">
+           <img src="gallery/cogumelos.jpeg" alt="projeto02">
+          
+            <img src="gallery/bota.jpeg" alt="projeto04">
+          
+            <img src="gallery/projeto1.jpeg" alt="projeto01">
+            <img src="gallery/jardim.jpeg" alt="projeto02">
+             <img src="gallery/piscinalonga.jpeg" alt=" projeto03">
+        </div>
     </div>
-
-    <button class="seta seta-direita" onclick="scrollGaleria(320)">
-        ❯
-    </button>
 
 </div>
 
@@ -214,21 +235,24 @@
         <h3>FALE CONOSCO</h3>
 
         <div class="utility">
+            <ul>
             <li>
-                <a href="#">
+                <a href="https://www.instagram.com/tech.fibras/">
                     <img src="assets/inst.png" alt="Instagram">
-                    <span>@tech.fibras</span>
+                  
                 </a>
+                  <span>@tech.fibras</span>
             </li>
+<li>
+    <a href="https://w.app/solucoesfibradevidro"id="whats-contato">
+        <img src="icons/whatsapp.svg" alt="Telefone">
+    </a>
 
-            <li>
-                <a href="#">
-                <img src="assets/whatsapp.png" alt="Telefone">
-                <span>(54)98427-3924  |</span>
-                <span>(54)98416-1222</span>
-                </a>
-            </li>
-        </div>
+    <div class="nums">
+        <span>(54) 98427-3924</span>
+        <span>(54) 98416-1222</span>
+    </div>
+</li>
     </div>
 
     <!-- RODAPÉ -->

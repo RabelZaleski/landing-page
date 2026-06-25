@@ -1,198 +1,337 @@
-/* ==========================================
-   HEADER / HERO (DESKTOP)
-========================================== */
-header{
+header {
     position: relative;
     overflow: hidden;
     margin-top: 20px;
 }
 
+/* ==========================================
+   HERO CONTAINER
+========================================== */
 
-.bnr{
-    padding: 40px;
+.bnr {
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 650px;
+    margin: 20px;
+    padding: 40px;
+
+    border-radius: 24px;
+
     background:
-        linear-gradient(180deg, transparent 0%, #020617 100%),
+        linear-gradient(
+            180deg,
+            rgba(2, 6, 23, 0.2) 0%,
+            rgba(2, 6, 23, 0.95) 100%
+        ),
         url("gallery/b-anner.png");
 
     background-size: cover;
     background-position: center;
-
-    height: 650px;
-    margin: 20px;
-    border-radius: 20px;
-    overflow: hidden;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    background-repeat: no-repeat;
 }
 
-/* CONTEÚDO DO HERO */
-.hero-info{
+/* GLOW */
+.bnr::before,
+.bnr::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+.bnr::before {
+    background: radial-gradient(
+        circle at 70% 30%,
+        rgba(45, 125, 255, 0.12),
+        transparent 60%
+    );
+}
+
+.bnr::after {
+    background: linear-gradient(
+        120deg,
+        rgba(45, 125, 255, 0.15),
+        transparent 40%
+    );
+}
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.hero-info {
     position: relative;
-    margin: 40px;
+    z-index: 2;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 22px;
 
-    z-index: 10;
-    max-width: 600px;
+    width: 100%;
+    max-width: 560px;
 }
 
-.hero-info h1{
+.hero-info h1 {
     color: #fff;
 
-    background: rgba(0,0,0,.35);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-
-    padding: 20px 30px;
-    border-radius: 16px;
-
-    font-size: 48px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
     font-weight: 800;
-    letter-spacing: -0.03em;
-
+    line-height: 1.1;
     text-align: center;
-}
 
-h1 span{
-    color: var(--primary, #00b7ff);
-}
+    padding: 18px 26px;
 
-/* ÍCONES */
-.bnr-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    color: #fff;
-    flex-wrap: wrap;
-}
-
-.icon-item{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-}
-
-.icon-item img{
-    width: 45px;
-    height: 45px;
-}
-
-/* BOTÃO */
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 10px;
-
-    width: 300px;
-    padding: 14px 22px;
-
-    text-decoration: none;
-    color: #fff;
-
-    font-size: 12px;
-    font-weight: 600;
-
-    border-radius: 12px;
-
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(0, 0, 0, 0.45);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    transition: .3s;
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
-.btn:hover{
-    background: rgba(255,255,255,.15);
-    transform: translateY(-2px);
+.hero-info h1 span {
+    color: #2D7DFF;
 }
 
-.icon-circle{
-    width: 28px;
-    height: 28px;
+/* ==========================================
+   ICONS (DESKTOP COM ÚLTIMO CENTRALIZADO)
+========================================== */
+
+.bnr-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+
+    width: 100%;
+    max-width: 560px;
+}
+
+/* CARD */
+.icon-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    border-radius: 16px;
+
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: #fff;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+}
+
+/* glow */
+.icon-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(45, 125, 255, 0.12),
+        transparent 60%
+    );
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.icon-item:hover::before {
+    opacity: 1;
+}
+
+.icon-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45, 125, 255, 0.35);
+    background: rgba(45, 125, 255, 0.08);
+}
+
+/* ÍCONE */
+.icon-item img {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* TEXTO */
+.icon-item span {
+    flex: 1;
+    display: block;
+    text-align: left;
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 🔥 ÚLTIMO ITEM CENTRALIZADO (DESKTOP) */
+.bnr-icons .icon-item:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 50%;
+}
+
+/* ==========================================
+   BOTÃO WHATSAPP
+========================================== */
+
+.botao-whats {
+    width: 100%;
+    max-width: 560px;
 
     display: flex;
     justify-content: center;
+}
+
+.botao-whats a {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+
+    display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-    border-radius: 50%;
-    background: rgba(255,255,255,.15);
+    padding: 14px 24px;
+
+    text-decoration: none;
+
+    color: #fff;
+    font-weight: 600;
+
+    border-radius: 999px;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(45, 125, 255, 0.35);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    transition: all 0.25s ease;
 }
 
-
-/* ==========================================
-   TABLET (até 1024px)
-========================================== */
-@media (max-width: 1024px){
-
-    .hero-info h1{
-        font-size: 38px;
-    }
-
-    .bnr-icons{
-        gap: 20px;
-    }
+.botao-whats a i {
+    font-size: 1.4rem;
+    color: #4D9CFF;
 }
 
+/* shine */
+.botao-whats a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+
+    transition: 0.7s ease;
+}
+
+.botao-whats a:hover::before {
+    left: 120%;
+}
+
+.botao-whats a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45, 125, 255, 0.7);
+    box-shadow: 0 18px 45px rgba(45, 125, 255, 0.18);
+}
 
 /* ==========================================
-   MOBILE (até 768px)
+   TABLET
 ========================================== */
-@media (max-width: 768px){
 
-    .bnr{
-        height: auto;
-        min-height: 600px;
-
-        margin: 10px;
+@media (max-width: 768px) {
+    .bnr {
+        justify-content: center;
         padding: 30px 20px;
-
-        justify-content: center;
-        align-items: center;
+        min-height: 600px;
     }
 
-    .hero-info{
-        margin: 0;
+    .hero-info {
+        max-width: 100%;
+    }
+
+    .bnr-icons {
+        grid-template-columns: 1fr;
+    }
+
+    .bnr-icons .icon-item:last-child {
         width: 100%;
+        justify-self: stretch;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+    .bnr {
+        margin: 10px;
+        min-height: 520px;
+        border-radius: 18px;
     }
 
-    .hero-info h1{
-        width: 100%;
-        font-size: 28px;
-        padding: 16px;
-        line-height: 1.2;
+    .hero-info h1 {
+        padding: 14px 18px;
+        font-size: clamp(24px, 7vw, 34px);
     }
 
-    .bnr-icons{
-        flex-direction: column;
-        gap: 15px;
+    .icon-item {
+        padding: 12px 14px;
     }
 
-    .icon-item{
-        justify-content: center;
-        text-align: center;
+    .icon-item span {
+        font-size: 13px;
     }
 
-    .icon-item img{
-        width: 36px;
-        height: 36px;
+    .botao-whats a {
+        font-size: 14px;
+        padding: 14px;
     }
+}
 
-    .btn{
-        width: 100%;
-        max-width: 320px;
+/* ==========================================
+   MOBILE PEQUENO
+========================================== */
+
+@media (max-width: 360px) {
+    .icon-item {
+        flex-direction: row;
     }
 }
